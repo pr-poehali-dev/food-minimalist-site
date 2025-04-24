@@ -2,7 +2,7 @@
 import Navbar from "@/components/Navbar";
 import { useCart } from "@/components/CartContext";
 import { Button } from "@/components/ui/button";
-import { Minus, Plus, Trash2, AlertCircle } from "lucide-react";
+import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
@@ -135,17 +135,17 @@ const Cart = () => {
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <Button className="w-full bg-gray-300 hover:bg-gray-300 text-gray-700 cursor-not-allowed" disabled>
-                            <AlertCircle className="w-4 h-4 mr-2" />
-                            Оформление недоступно
+                            <ShoppingBag className="w-4 h-4 mr-2" />
+                            Только для ознакомления
                           </Button>
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p>Оформление заказа временно недоступно</p>
+                          <p>Сайт работает в режиме демонстрации, заказ невозможен</p>
                         </TooltipContent>
                       </Tooltip>
                     </TooltipProvider>
                     <p className="mt-2 text-xs text-center text-gray-500">
-                      В данный момент заказы не принимаются
+                      Демо-режим: просмотр товаров без возможности покупки
                     </p>
                   </div>
                 </div>
@@ -163,7 +163,7 @@ const Cart = () => {
               Ваша корзина пуста
             </h2>
             <p className="mb-6 text-center text-gray-600 max-w-md">
-              Вы можете просмотреть товары в нашем каталоге, но покупка временно недоступна
+              Вы можете добавить товары в корзину для ознакомления, но заказать их пока нельзя
             </p>
             <Link to="/catalog">
               <Button className="bg-blue-600 hover:bg-blue-700">

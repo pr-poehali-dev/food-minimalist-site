@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { AlertCircle } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 import { Product } from "@/types/product";
 import { Badge } from "@/components/ui/badge";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
@@ -55,12 +55,12 @@ const ProductCard = ({ product }: ProductCardProps) => {
                   className="border-gray-300 text-gray-600 hover:bg-gray-100"
                   disabled
                 >
-                  <AlertCircle className="w-4 h-4 mr-1" />
-                  Недоступно
+                  <ShoppingCart className="w-4 h-4 mr-1" />
+                  Только просмотр
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
-                <p>Покупка временно недоступна</p>
+                <p>Заказ товаров временно невозможен</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
