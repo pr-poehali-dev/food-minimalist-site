@@ -3,13 +3,15 @@ import { Button } from "@/components/ui/button";
 import { ShoppingCart } from "lucide-react";
 import { Product } from "@/types/product";
 import { Badge } from "@/components/ui/badge";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { useCart } from "@/components/CartContext";
 
 interface ProductCardProps {
   product: Product;
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
+  const { addToCart } = useCart();
+  
   return (
     <div className="overflow-hidden bg-white border border-gray-200 rounded-lg shadow-sm transition-all hover:shadow-md group">
       <div className="relative h-52 overflow-hidden bg-gray-100">
@@ -46,24 +48,15 @@ const ProductCard = ({ product }: ProductCardProps) => {
             )}
           </div>
           
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button 
-                  size="sm" 
-                  variant="outline"
-                  className="border-gray-300 text-gray-600 hover:bg-gray-100"
-                  disabled
-                >
-                  <ShoppingCart className="w-4 h-4 mr-1" />
-                  Только просмотр
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Заказ товаров временно невозможен</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+          <Button 
+            size="sm" 
+            variant="outline"
+            className="border-gray-300 text-gray-600 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-600 transition-colors"
+            onClick={() => addToCart(product)}
+          >
+            <ShoppingCart className="w-4 h-4 mr-1" />
+            В корзину
+          </Button>
         </div>
       </div>
     </div>

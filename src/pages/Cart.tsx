@@ -136,7 +136,7 @@ const Cart = () => {
                         <TooltipTrigger asChild>
                           <Button className="w-full bg-gray-300 hover:bg-gray-300 text-gray-700 cursor-not-allowed" disabled>
                             <ShoppingBag className="w-4 h-4 mr-2" />
-                            Только для ознакомления
+                            Оформить заказ
                           </Button>
                         </TooltipTrigger>
                         <TooltipContent>
@@ -163,7 +163,7 @@ const Cart = () => {
               Ваша корзина пуста
             </h2>
             <p className="mb-6 text-center text-gray-600 max-w-md">
-              Вы можете добавить товары в корзину для ознакомления, но заказать их пока нельзя
+              Добавьте товары из каталога, чтобы они появились в корзине
             </p>
             <Link to="/catalog">
               <Button className="bg-blue-600 hover:bg-blue-700">
