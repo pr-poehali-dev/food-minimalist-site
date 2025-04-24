@@ -17,18 +17,18 @@ const Catalog = () => {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
 
-      <main className="container px-4 py-8 mx-auto">
+      <main className="container py-8 mx-auto">
         <h1 className="mb-6 text-3xl font-bold text-gray-900">Каталог</h1>
 
         <div className="flex flex-col md:flex-row gap-8">
           {/* Categories Sidebar */}
           <div className="w-full md:w-64 shrink-0">
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <h2 className="mb-4 text-lg font-medium">Категории</h2>
+            <div className="p-5 bg-white rounded-lg shadow-sm">
+              <h2 className="mb-4 text-lg font-medium text-gray-900">Категории</h2>
               <div className="flex flex-col gap-2">
                 <Button
                   variant={selectedCategory === null ? "default" : "outline"}
-                  className="justify-start"
+                  className="justify-start font-normal"
                   onClick={() => setSelectedCategory(null)}
                 >
                   Все категории
@@ -37,7 +37,7 @@ const Catalog = () => {
                   <Button
                     key={category}
                     variant={selectedCategory === category ? "default" : "outline"}
-                    className="justify-start"
+                    className="justify-start font-normal"
                     onClick={() => setSelectedCategory(category)}
                   >
                     {category}
@@ -46,27 +46,27 @@ const Catalog = () => {
               </div>
             </div>
 
-            <div className="p-4 mt-4 bg-white rounded-lg shadow-sm">
-              <h2 className="mb-4 text-lg font-medium">Цена</h2>
+            <div className="p-5 mt-4 bg-white rounded-lg shadow-sm">
+              <h2 className="mb-4 text-lg font-medium text-gray-900">Цена</h2>
               <div className="flex flex-col gap-2">
                 <Button
                   variant="outline"
-                  className="justify-start"
-                  onClick={() => setSelectedCategory(null)}
+                  className="justify-start font-normal"
+                  onClick={() => {}}
                 >
                   100 ₽
                 </Button>
                 <Button
                   variant="outline"
-                  className="justify-start"
-                  onClick={() => setSelectedCategory(null)}
+                  className="justify-start font-normal"
+                  onClick={() => {}}
                 >
                   200 ₽
                 </Button>
                 <Button
                   variant="outline"
-                  className="justify-start"
-                  onClick={() => setSelectedCategory(null)}
+                  className="justify-start font-normal"
+                  onClick={() => {}}
                 >
                   250 ₽
                 </Button>
@@ -76,10 +76,12 @@ const Catalog = () => {
 
           {/* Products */}
           <div className="flex-1">
-            <ProductGrid
-              products={filteredProducts}
-              title={selectedCategory || "Все товары"}
-            />
+            <div className="p-6 mb-6 bg-white rounded-lg shadow-sm">
+              <ProductGrid
+                products={filteredProducts}
+                title={selectedCategory || "Все товары"}
+              />
+            </div>
           </div>
         </div>
       </main>

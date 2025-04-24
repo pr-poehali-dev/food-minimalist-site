@@ -13,7 +13,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 213 90% 45%;
+    --primary: 210 100% 50%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -77,7 +77,82 @@
   }
 }
 
-/* Custom scrollbar */
+/* Консистентные отступы и пропорции */
+.container {
+  @apply px-4 mx-auto max-w-7xl;
+}
+
+/* Улучшенные карточки товаров */
+.product-card {
+  @apply transition-all duration-200 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md;
+}
+
+.product-card-image {
+  @apply relative h-48 overflow-hidden bg-gray-100 rounded-t-lg;
+}
+
+.product-card-image img {
+  @apply object-cover w-full h-full transition-transform duration-300;
+}
+
+.product-card:hover .product-card-image img {
+  @apply scale-105;
+}
+
+.product-card-content {
+  @apply p-4;
+}
+
+/* Улучшенная навигация */
+.nav-link {
+  @apply font-medium text-gray-700 transition-colors hover:text-blue-600;
+}
+
+.nav-button {
+  @apply transition-colors rounded-full;
+}
+
+/* Улучшенные кнопки */
+.btn-primary {
+  @apply transition-colors bg-blue-600 text-white hover:bg-blue-700;
+}
+
+.btn-secondary {
+  @apply transition-colors bg-white text-gray-700 border border-gray-300 hover:bg-gray-50;
+}
+
+/* Плавные анимации */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* Стилизация сетки товаров */
+.product-grid {
+  @apply grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5;
+}
+
+.product-grid > div {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.product-grid > div:nth-child(1) { animation-delay: 0.1s; }
+.product-grid > div:nth-child(2) { animation-delay: 0.15s; }
+.product-grid > div:nth-child(3) { animation-delay: 0.2s; }
+.product-grid > div:nth-child(4) { animation-delay: 0.25s; }
+.product-grid > div:nth-child(5) { animation-delay: 0.3s; }
+.product-grid > div:nth-child(6) { animation-delay: 0.35s; }
+.product-grid > div:nth-child(7) { animation-delay: 0.4s; }
+.product-grid > div:nth-child(8) { animation-delay: 0.45s; }
+.product-grid > div:nth-child(9) { animation-delay: 0.5s; }
+.product-grid > div:nth-child(10) { animation-delay: 0.55s; }
+
+/* Улучшенный скроллбар */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -96,32 +171,3 @@
 ::-webkit-scrollbar-thumb:hover {
   background-color: #a8a8a8;
 }
-
-/* Custom animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fadeIn {
-  animation: fadeIn 0.5s ease forwards;
-}
-
-/* Staggered animation for product cards */
-.product-grid > div {
-  opacity: 0;
-  animation: fadeIn 0.5s ease forwards;
-}
-
-.product-grid > div:nth-child(1) { animation-delay: 0.1s; }
-.product-grid > div:nth-child(2) { animation-delay: 0.15s; }
-.product-grid > div:nth-child(3) { animation-delay: 0.2s; }
-.product-grid > div:nth-child(4) { animation-delay: 0.25s; }
-.product-grid > div:nth-child(5) { animation-delay: 0.3s; }
-.product-grid > div:nth-child(6) { animation-delay: 0.35s; }
-.product-grid > div:nth-child(7) { animation-delay: 0.4s; }
-.product-grid > div:nth-child(8) { animation-delay: 0.45s; }
-.product-grid > div:nth-child(9) { animation-delay: 0.5s; }
-.product-grid > div:nth-child(10) { animation-delay: 0.55s; }
-.product-grid > div:nth-child(11) { animation-delay: 0.6s; }
-.product-grid > div:nth-child(12) { animation-delay: 0.65s; }

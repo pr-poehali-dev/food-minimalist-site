@@ -11,17 +11,17 @@ const ProductGrid = ({ products, title }: ProductGridProps) => {
   return (
     <div className="w-full">
       {title && (
-        <h2 className="mb-4 text-2xl font-bold text-gray-900">{title}</h2>
+        <h2 className="mb-6 text-2xl font-bold text-gray-900">{title}</h2>
       )}
       
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+      <div className="product-grid">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
       
       {products.length === 0 && (
-        <div className="flex items-center justify-center h-40">
+        <div className="flex items-center justify-center h-40 bg-gray-50 rounded-lg">
           <p className="text-gray-500">Товары не найдены</p>
         </div>
       )}

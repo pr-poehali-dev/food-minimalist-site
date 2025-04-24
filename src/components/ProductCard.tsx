@@ -13,19 +13,21 @@ const ProductCard = ({ product }: ProductCardProps) => {
   const { addToCart } = useCart();
   
   return (
-    <div className="overflow-hidden bg-white border border-gray-200 rounded-lg shadow-sm transition-all hover:shadow-md group">
-      <div className="relative h-52 overflow-hidden bg-gray-100">
+    <div className="product-card overflow-hidden">
+      <div className="product-card-image">
         <img
           src={product.image || "/placeholder.svg"}
           alt={product.name}
-          className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+          className="object-cover w-full h-full"
         />
         {product.onSale && (
-          <Badge className="absolute top-2 right-2 bg-red-500 text-white font-medium px-2 py-1">Акция</Badge>
+          <Badge className="absolute top-2 right-2 bg-red-500 text-white font-medium px-2 py-1">
+            Акция
+          </Badge>
         )}
       </div>
 
-      <div className="p-4">
+      <div className="product-card-content">
         <h3 className="mb-2 text-sm font-medium text-gray-900 h-10 line-clamp-2">
           {product.name}
         </h3>
@@ -51,7 +53,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           <Button 
             size="sm" 
             variant="outline"
-            className="border-gray-300 text-gray-600 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-600 transition-colors"
+            className="bg-white border-gray-300 text-gray-600 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-600 transition-colors"
             onClick={() => addToCart(product)}
           >
             <ShoppingCart className="w-4 h-4 mr-1" />
